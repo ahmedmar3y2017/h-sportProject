@@ -24,6 +24,21 @@
         <li><a href="#products">products</a></li>
         <li><a href="#guarantee">guarantee</a></li>
         <li><a href="#people">people</a></li>
+        
+        <h:panelGroup rendered="#{not empty admin}">
+        	<li>
+        		<h:form>
+        			<h:commandLink id="logout" value="logout" action="#{login.logout}"/>
+        		</h:form>
+        	</li>
+        </h:panelGroup>
+        
+        <h:panelGroup rendered="#{empty admin}">
+        	<li>
+        		<a href="login.xhtml">login</a>
+        	</li>
+        </h:panelGroup>
+        
       </ul><!-- navbar -->
     </div><!-- container nav-elements -->
   </nav>

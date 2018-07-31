@@ -5,18 +5,18 @@ import javax.faces.bean.SessionScoped;
 
 import com.sport.shared.HibernateUtil;
 
-@ManagedBean
+@javax.annotation.ManagedBean
 @SessionScoped
 public class welcome {
-	
-	private String message="ahmed mohamed mar";
+
+	private String message = "ahmed mohamed mar";
 
 	public welcome() {
 		// TODO Auto-generated constructor stub
-	
+
 		HibernateUtil.getSessionFactory();
 	}
-	
+
 	public String getMessage() {
 		return message;
 	}
@@ -25,5 +25,4 @@ public class welcome {
 		this.message = message;
 	}
 
-	
 }

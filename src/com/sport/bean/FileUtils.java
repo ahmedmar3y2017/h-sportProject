@@ -14,22 +14,22 @@ import com.sport.model.Employee;
 @SessionScoped
 public class FileUtils {
 
-	//Text file separator for parsing
+	// Text file separator for parsing
 	private final String SEPARATOR = ";";
-	
-	//New updated employee data file
+
+	// New updated employee data file
 	private final String UPDATED_EMPLOYEES_FILE = "updated_employees.txt";
 
 	// Directories
-	final private String PROJECT_DIR 		=	"C:\\Users\\marie\\workspace\\project1\\"; // C:\\Users\\Genesis\\workspace\\MyCRUDProject\\";
-	final private String SOURCES_DIR 		=	PROJECT_DIR + "sources\\";
-	final private String EMPLOYEES_IMG_DIR 	=	PROJECT_DIR + "WebContent\\images\\employees\\";
+	final private String PROJECT_DIR = "C:\\Users\\marie\\workspace\\project1\\"; // C:\\Users\\Genesis\\workspace\\MyCRUDProject\\";
+	final private String SOURCES_DIR = PROJECT_DIR + "sources\\";
+	final private String EMPLOYEES_IMG_DIR = PROJECT_DIR + "WebContent\\images\\employees\\";
 
-	//The input and output text files
+	// The input and output text files
 	private String inputFile;
 	private String outputFile;
-	
-	//Name of uploaded file
+
+	// Name of uploaded file
 	private String uploadedFileName;
 	private ArrayList<String> dataList = new ArrayList<String>();
 
@@ -47,6 +47,7 @@ public class FileUtils {
 
 	/**
 	 * Save the uploaded files to the target directory
+	 * 
 	 * @param uploadedFile
 	 */
 	public void saveFile(Part uploadedFile) {
@@ -61,6 +62,7 @@ public class FileUtils {
 
 	/**
 	 * Open and read text file
+	 * 
 	 * @param separator
 	 */
 	public void readFile(String separator) {
@@ -89,6 +91,7 @@ public class FileUtils {
 
 	/**
 	 * Write data to new employee text file
+	 * 
 	 * @param employeeList
 	 */
 	public void writeEmployeeFile(List<Employee> employeeList) {
@@ -117,6 +120,7 @@ public class FileUtils {
 
 	/**
 	 * Write each line (employee record) to the new employee text file
+	 * 
 	 * @param outFile
 	 * @param employee
 	 * @throws IOException

@@ -4,10 +4,6 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html">
-      	
-	<f:metadata>
-	<f:event type="preRenderView" listener="#{login.grantPermission()}"/>
-</f:metadata>
 <head>
   <meta charset="UTF-8" />
   <title>H+ Sport</title>
@@ -48,78 +44,32 @@
   
   </header>
   
-   <div class="container">
- 	<h:link outcome="dashboard" value="Dashboard"/> > #{team.breadCrumb}
- </div>
- 
+  
   
 <section id="members" class="section">
 
  <div class="container tagline">
-    <h1 class="headline">Add New Employee</h1>
+    <h1 class="headline">Login ..</h1>
   </div><!-- container tagline -->
 
 
+
 <div class="container">
+<h:messages style="color:red;"/>
 
 <h:form id="form" enctype="multipart/form-data">
 
-
-<h:panelGroup>
-<h:outputLabel value="First Name" for="firstName" />
-<h:inputText value="#{team.employee.firstName}" id="firstName"  required="true" requiredMessage="FirstName is Required"/>
-<h:message for="firstName" style="color:red;"/>
-
-
-</h:panelGroup>
-
-<br />
-<h:panelGroup>
-<h:outputLabel value="Last Name" for="lastName" />
-<h:inputText value="#{team.employee.lastName}" id="lastName" required="true" requiredMessage="lastName is Required"/>
-<h:message for="lastName" style="color:red;"/>
-
-</h:panelGroup>
-
-<br />
-<h:panelGroup>
-<h:outputLabel value="Degree" for="degree" />
-<h:inputText value="#{team.employee.degree}" id="degree" />
-
-
-</h:panelGroup>
-
-<br />
-<h:panelGroup>
-<h:outputLabel value="Title" for="title" />
-<h:inputText value="#{team.employee.title}" id="title" required="true" requiredMessage="Title is Required"/>
-<h:message for="title" style="color:red;"/>
-
-</h:panelGroup>
-
-<br />
-<h:panelGroup>
-<h:outputLabel value="Description" for="description" />
-<h:inputTextarea value="#{team.employee.description}" id="description" required="true" requiredMessage="Desc is Required"/>
-<h:message for="description" style="color:red;"/>
-
-</h:panelGroup>
-<br />
-<h:panelGroup>
-<h:outputLabel value="Photo" for="photo" />
-
-<h:inputFile id="Photo" value="#{team.uploadedFile}"></h:inputFile>
-
-
-</h:panelGroup>
-<br />
+<h:outputText value="UserName"  />
+<h:inputText value="#{login.username}" id="username" required="true" requiredMessage="UserName is required" />
 <br />
 
-
-
-<h:commandLink action="#{team.add()}" value="add" id="add" />
+<h:outputText value="Password" />
+<h:inputSecret  value="#{login.password}" id="password" required="true" requiredMessage="Password is required"  />
 <br /><br />
-<h:link outcome="dashboard" value="cancel Add" id="cancel"></h:link>
+
+
+<h:commandLink action="#{login.login()}" value="login" id="login" />
+<br /><br />
 
 </h:form>
 
